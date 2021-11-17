@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "app-root-path": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "uuid": "*",
+    "winston": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiomajoshua/twitee-api.git"
+  },
+  "keywords": [
+    "SocialMedia",
+    "Networking",
+    "Friendship"
+  ],
+  "author": "",
+  "license": "ISC"
+}
