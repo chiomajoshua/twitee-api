@@ -1,0 +1,20 @@
+{
+  "name": "twitee-api",
+  "version": "1.0.0",
+  "description": "TWITEE is a mini and substandard runoff of Twitter. Users register and login and can put up anything that crosses their mind. The whole world can view their twits and comment on their twits /and like them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiomajoshua/twitee-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiomajoshua/twitee-api/issues"
+  },
+  "homepage": "https://github.com/chiomajoshua/twitee-api#readme"
+}
