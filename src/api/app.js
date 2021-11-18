@@ -1,7 +1,11 @@
 const config = require('./services/common/config/env.config');
 const express = require('express');
+const http = require('http');
 const winston = require('./services/common/config/winston');
 const morgan = require('morgan');
+const helmet = require('helmet');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 const app = express();
 
 const AuthorizationRouter = require('./services/authorization/route.config');
@@ -21,7 +25,12 @@ app.use(function (req, res, next) {
     }
 });
 
+
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(helmet());
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(morgan('combined', { stream: winston.stream }));
 
 AuthorizationRouter.routesConfig(app);
@@ -32,7 +41,7 @@ app.get("/", (req, res) =>{
     res.send("hello world!");
     });
 
-app.listen(config.port, function () {
+http.createServer(app).listen(config.port, function () {
     console.log('app listening at port %s', config.port);
 });
 

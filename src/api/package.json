@@ -2,16 +2,22 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "start-gendoc": "node swagger.js"
   },
   "dependencies": {
     "app-root-path": "*",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "*",
+    "helmet": "^4.6.0",
     "jsonwebtoken": "*",
     "mongoose": "*",
     "morgan": "*",
+    "swagger-ui-express": "^4.1.6",
+    "swagger-autogen": "*",
     "uuid": "*",
     "winston": "*"
   },
