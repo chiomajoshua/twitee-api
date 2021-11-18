@@ -6,6 +6,11 @@ exports.routesConfig = function (app) {
         ValidationMiddleware.validJWTNeeded,
         PostsController.insert
     ]);
+
+    app.post('/api/activity', [
+        ValidationMiddleware.validJWTNeeded,
+        PostsController.insertActivity
+    ]);
     
     app.get('/api/posts/:postId', [
         ValidationMiddleware.validJWTNeeded,

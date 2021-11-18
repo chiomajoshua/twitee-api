@@ -10,6 +10,7 @@ exports.insert = (req, res) => {
     UserModel.findByEmail(req.body.email)
     .then((user) => {
     if(!user[0]){
+        req.body.name = email.split('@')[0];
          UserModel.createUser(req.body)
         .then((result) => {
             res.status(201).send({id: result._id});

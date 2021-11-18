@@ -1,5 +1,5 @@
 const PostModel = require('../model/post.model');
-const crypto = require('crypto');
+const ActivityModel = require('../model/activity.model');
 const winston = require('../../common/config/winston');
 
 exports.insert = (req, res) => {
@@ -55,3 +55,21 @@ exports.removePost = (req, res) => {
         res.status(500).send({response: "An Error Occured. Please Contact Administrator"});
     }
 };
+
+//#region Activity
+exports.insertActivity = (req, res) => {
+    try{
+        req.body.userId = req.jwt.userId;
+        ActivityModel.createActivity(req.body)
+        .then((result) => {
+            res.status(201).send({id: result._id});
+        })
+    }
+    catch(e){
+        winston.error(e);
+        res.status(500).send({response: "An Error Occured. Please Contact Administrator"});
+    }
+};
+
+
+//#endregion
